@@ -6,24 +6,24 @@ using System.Threading.Tasks;
 
 namespace Abstraction
 {
-    public abstract class Employee
+    public abstract class Employee //Base class for all employees
     {
         public string Name { get; set; }
         public string LastName { get; set; }
 
         public string Department { get; set; }
 
-        public abstract void Work();
+        public abstract void Work(); //Abstract method to be implemented by derived classes
 
-        public void Introduce()
+        public void Introduce()  // Non-abstract method that can be used by all employees
         {
             Console.WriteLine($"Hello, my name is {Name} {LastName} and I work in the {Department} department.");
         }
     }
 
-    public class Manager : Employee
+    public class Manager : Employee // Inherits from Employee and implements the Work method
     {
-        public override void Work()
+        public override void Work() // Override the abstract method Work
         {
             Console.WriteLine($"{Name} {LastName} is managing the team.");
         }
